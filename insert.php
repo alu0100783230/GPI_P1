@@ -10,8 +10,9 @@
 
   if (!$Conexion->connect_error) {
 
-    $Id = $_REQUEST["Id"];
+
     $Accion = $_REQUEST["Accion"];
+
 
     if ($Accion!="Eliminar") {
       $Nombre = $_REQUEST["Nombre"];
@@ -20,15 +21,13 @@
       $Altura =$_REQUEST["Altura"];
     }
 
-
+    // Para evitar error
     if ($Accion == "Eliminar" && $Id != "") {
       $SQL = "delete from Datos_Personales where id = $Id";
     } else {
-
       $SQL = "insert into Datos_Personales ";
       $SQL .= " (Nombre, NIF, Nacido, Altura) values ";
       $SQL .= " ('$Nombre', '$Nif', '$Nacido', '$Altura')";
-
     }
 
     if (!mysqli_query($Conexion, $SQL))
@@ -46,6 +45,7 @@
   while ($Tupla = mysqli_fetch_array($Resultado, MYSQLI_ASSOC)){
     echo "<p>"  . $Tupla["Id"] . " "  . $Tupla["Nombre"] . " " . $Tupla["Nif"] .
          " " . $Tupla["Nacido"] . " " . $Tupla["Altura"];
+    echo "<a href = 'formulario.php?Accion=Editar&Id=".$Tupla["Id"]."'>Editar</a>";
     echo "<a href = 'insert.php?Accion=Eliminar&Id=".$Tupla["Id"]."'>Eliminar</a>";
   }
 
