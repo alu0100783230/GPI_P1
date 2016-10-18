@@ -21,6 +21,9 @@
       $Altura =$_REQUEST["Altura"];
     }
 
+
+    $Id = $_REQUEST["Id"];
+
     // Para evitar error
     if ($Accion == "Eliminar" && $Id != "") {
       $SQL = "delete from Datos_Personales where id = $Id";
@@ -47,6 +50,7 @@
          " " . $Tupla["Nacido"] . " " . $Tupla["Altura"];
     echo "<a href = 'formulario.php?Accion=Editar&Id=".$Tupla["Id"]."'>Editar</a>";
     echo "<a href = 'insert.php?Accion=Eliminar&Id=".$Tupla["Id"]."'>Eliminar</a>";
+    Id: <input type="text" name="Id"</input><br>
   }
 
   mysqli_close ($Conexion);
