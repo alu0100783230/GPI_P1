@@ -8,8 +8,7 @@
 
     $conn = new mysqli ($Servidor, $Usuario, $Clave, $BaseDatos);
 
-    if ($conn->connect_error) die ("FALLO " . $conn->connect_error);
-    echo "Funciono";
+    if ($conn->connect_error) die ("FALLO " . $conn->connect_error);    
     return $conn;
   }
  ?>
