@@ -60,7 +60,7 @@
                   <div class="form-group">
                     <input class="form-control" id="Altura" placeholder="Altura" name="Altura" type="number" autofocus value = "<?php echo $Altura;?>"</input>
                   </div>
-                  <input class="form-control" id="Id" placeholder="Id" name="Id" type="number" autofocus value = "<?php echo $Id;?>"</input>
+                  <input class="form-control" id="Id" placeholder="Id" name="Id" type="hidden" autofocus value = "<?php echo $Id;?>"</input>
                   <br>
                   <input type="submit" class="btn btn-lg btn-success btn-block" name="Accion" value = "<?php echo $Boton;?>"</input>
                 </form>

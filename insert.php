@@ -26,8 +26,12 @@
 
       if ($Accion == "Editar") {
         $Id =  $_REQUEST["Id"];
-        $SQL = "update Datos_Personales set Nombre=";
-        $SQL .= "'$Nombre' where Id = '$Id'";
+        $SQL = "update Datos_Personales set ";
+        $SQL .= "Nombre='$Nombre', ";
+        $SQL .= "Altura='$Altura', ";
+        $SQL .= "Nif='$Nif', ";
+        $SQL .= "Nacido='$Nacido' ";
+        $SQL .= " where Id = '$Id'";
 
       } else if ($Accion == "Insertar") {
         $SQL = "insert into Datos_Personales ";
