@@ -1,4 +1,5 @@
 function eval_data() {
+
   var form = document.forms["formulario"];
 
   var nombre = form["Nombre"].value;
@@ -22,6 +23,6 @@ function eval_data() {
     alert (pre_text.concat(obligatory).concat("son obligatorios"));
     return false;
   }
-  
+
   return true;
 }

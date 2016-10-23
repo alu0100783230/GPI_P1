@@ -11,11 +11,9 @@
   if (!$Conexion->connect_error) {
 
     $Accion = $_REQUEST["Accion"];
-
-
+    $Id =  $_REQUEST["Id"];
     // Para evitar error
     if ($Accion == "Eliminar") {
-      $Id =  $_REQUEST["Id"];
       $SQL = "delete from Datos_Personales where Id = $Id";
     } else {
 
@@ -25,7 +23,7 @@
       $Altura =$_REQUEST["Altura"];
 
       if ($Accion == "Editar") {
-        $Id =  $_REQUEST["Id"];
+
         $SQL = "update Datos_Personales set ";
         $SQL .= "Nombre='$Nombre', ";
         $SQL .= "Altura='$Altura', ";
