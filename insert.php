@@ -38,7 +38,6 @@
       }
     }
 
-
     if (!mysqli_query($Conexion, $SQL))
       echo "Error 2 " . mysqli_error ($Conexion);
 
@@ -60,6 +59,7 @@
    <body>
      <div class="container-fluid">
        <h1> Panel de control </h1>
+       <a class="btn btn-default" a href="./formulario.php">Volver</a>
        <table class="table table-striped">
         <thead>
           <tr>
